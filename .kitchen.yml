@@ -1,0 +1,23 @@
+driver:
+  name: vagrant
+
+provisioner:
+  name: chef_zero
+
+platforms:
+  - name: ubuntu-14.04
+
+suites:
+  - name: dev_box
+    run_list:
+      - role[dev_box]
+  - name: radicale_server
+    run_list:
+      - role[radicale_server]
+    attributes:
+      radicale_box:
+        volume:
+          mount_point: null
+      ddclient:
+        login: null
+        password: null
