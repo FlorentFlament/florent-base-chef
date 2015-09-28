@@ -2,16 +2,11 @@ Chef repository to be used for chef-zero provisioning
 
 Usage
 =====
-* Launch ``chef-zero`` in some terminal
 
-* Populate the dummy chef server:
+There are two scripts in the ``scripts`` repository:
 
-    berks upload
-    knife data bag create users
-    knife data bag from file users florent.json
-    knife data bag from file users ubuntu.json
-    knife role from file roles/dev_box.json
+* converge.sh : To converge a node with chef-zero. This requires
+  launching chef-zero in another shell before.
 
-* Launch chef-client
-
-    sudo chef-client -c ~/chef-zero/.chef/client.rb -r 'role[dev_box]'
+* update-vagrant.sh : To update a vagrant directory used to spawn a
+  new vagrant VM.
